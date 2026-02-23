@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy Game Zone Pune | Best Gaming Cafe in Nanded City, Pune</title>
+<meta name="description" content="Pune's ultimate high-end gaming sanctuary in Nanded City. RTX 4070 Ti, 240Hz monitors, PS5 Lounge. Book your station now!">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["VideoGameStore", "LocalBusiness"],
+  "name": "Galaxy Game Zone Pune",
+  "description": "Premium Esports Cafe & Social Gaming Hub in Nanded City, Pune",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nanded City",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411041",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.4636",
+    "longitude": "73.8272"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "88"
+  }
+}
+</script>
+
+<style>
+  :root {
+    --pink: #FF007F;
+    --bg: #050505;
+    --purple: #7000FF;
+    --green: #39FF14;
+    --white: #FFFFFF;
+    --gray: #E0E0E0;
+    --card-bg: rgba(255, 0, 127, 0.04);
+    --glass: rgba(255,255,255,0.03);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom Cursor */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--pink);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 10px var(--pink), 0 0 20px var(--pink);
+  }
+  .cursor-trail {
+    width: 28px; height: 28px;
+    border: 1px solid var(--pink);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    transition: all 0.15s ease;
+    opacity: 0.5;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 2px; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5,5,5,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,0,127,0.15);
+  }
+
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+  }
+  .logo span { color: var(--pink); }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+  .nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+
+  .btn-primary {
+    background: transparent;
+    border: 1px solid var(--pink);
+    color: var(--white);
+    padding: 10px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255,0,127,0.3), inset 0 0 10px rgba(255,0,127,0.05);
+  }
+  .btn-primary:hover {
+    background: var(--pink);
+    box-shadow: 0 0 20px rgba(255,0,127,0.8), 0 0 40px rgba(255,0,127,0.4);
+    transform: translateY(-1px);
+  }
+  .btn-primary.breathing {
+    animation: breathe 2.5s ease-in-out infinite;
+  }
+  @keyframes breathe {
+    0%, 100% { box-shadow: 0 0 10px rgba(255,0,127,0.4), 0 0 20px rgba(255,0,127,0.2); }
+    50% { box-shadow: 0 0 25px rgba(255,0,127,0.9), 0 0 50px rgba(255,0,127,0.5), 0 0 80px rgba(255,0,127,0.2); }
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 100px 20px 60px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(112,0,255,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(255,0,127,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(255,0,127,0.08) 0%, transparent 60%);
+    z-index: 0;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,0,127,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,0,127,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+
+  .hero-scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.1) 2px,
+      rgba(0,0,0,0.1) 4px
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 900px; }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(57,255,20,0.4);
+    color: var(--green);
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 24px;
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 5px rgba(57,255,20,0.3); }
+    50% { box-shadow: 0 0 15px rgba(57,255,20,0.6); }
+  }
+
+  .hero-badge::before {
+    content: '●';
+    margin-right: 8px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 0%, #FF007F 50%, #7000FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--gray);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .hero-loc {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    color: var(--pink);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+
+  .btn-secondary {
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--gray);
+    padding: 10px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover {
+    border-color: var(--gray);
+    color: var(--white);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--pink);
+    display: block;
+    text-shadow: 0 0 20px rgba(255,0,127,0.5);
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* TICKER */
+  .ticker-wrap {
+    background: rgba(255,0,127,0.06);
+    border-top: 1px solid rgba(255,0,127,0.2);
+    border-bottom: 1px solid rgba(255,0,127,0.2);
+    padding: 14px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 30s linear infinite;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .ticker-item {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--pink);
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+  .ticker-dot {
+    color: rgba(255,0,127,0.4);
+    padding: 0 5px;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 40px; }
+  .section-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  .section-header { margin-bottom: 60px; }
+
+  /* RIGS / BENTO GRID */
+  #rigs { background: radial-gradient(ellipse at top, rgba(112,0,255,0.06) 0%, transparent 60%); }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .bento-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,0,127,0.15);
+    backdrop-filter: blur(10px);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: none;
+  }
+  .bento-card:hover {
+    border-color: rgba(255,0,127,0.5);
+    box-shadow: 0 0 30px rgba(255,0,127,0.1), inset 0 0 30px rgba(255,0,127,0.03);
+    transform: translateY(-2px);
+  }
+  .bento-card.large { grid-column: span 2; grid-row: span 1; min-height: 300px; }
+  .bento-card.tall { grid-row: span 2; }
+
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--pink), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .bento-card:hover::before { opacity: 1; }
+
+  .bento-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, rgba(255,0,127,0.1), rgba(112,0,255,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    border: 1px solid rgba(255,0,127,0.1);
+  }
+  .bento-card.large .bento-img { height: 220px; }
+
+  .bento-tag {
+    display: inline-block;
+    background: rgba(255,0,127,0.1);
+    border: 1px solid rgba(255,0,127,0.3);
+    color: var(--pink);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .bento-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .bento-desc { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.7; }
+
+  .bento-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .spec-chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  /* PRICING */
+  #pricing {
+    text-align: center;
+    background: radial-gradient(ellipse at bottom, rgba(255,0,127,0.05) 0%, transparent 60%);
+  }
+  #pricing .section-header { text-align: center; }
+  #pricing .section-sub { margin: 0 auto; }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,0,127,0.15);
+    padding: 40px 32px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: none;
+  }
+  .pricing-card:hover {
+    border-color: var(--pink);
+    box-shadow: 0 0 40px rgba(255,0,127,0.15);
+    transform: translateY(-4px);
+  }
+  .pricing-card.featured {
+    border-color: var(--pink);
+    background: rgba(255,0,127,0.06);
+    box-shadow: 0 0 30px rgba(255,0,127,0.1);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -1px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--pink);
+    color: var(--white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    padding: 4px 16px;
+    text-transform: uppercase;
+  }
+
+  .pricing-tier {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .pricing-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .pricing-period {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .pricing-features { list-style: none; margin-bottom: 32px; text-align: left; }
+  .pricing-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.85rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pricing-features li::before { content: '▸'; color: var(--pink); font-size: 0.75rem; }
+
+  /* FUEL / SNACKS */
+  #fuel {
+    background: rgba(255,255,255,0.01);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+    padding: 80px 40px;
+  }
+  .fuel-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .fuel-item {
+    background: rgba(255,0,127,0.04);
+    border: 1px solid rgba(255,0,127,0.12);
+    padding: 24px 20px;
+    text-align: center;
+    width: 140px;
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .fuel-item:hover {
+    border-color: rgba(255,0,127,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(255,0,127,0.1);
+  }
+  .fuel-emoji { font-size: 2rem; display: block; margin-bottom: 12px; }
+  .fuel-name { font-size: 0.8rem; color: var(--gray); font-weight: 500; display: block; margin-bottom: 6px; }
+  .fuel-price { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: var(--pink); font-weight: 700; }
+
+  /* REVIEWS */
+  #reviews {
+    background: radial-gradient(ellipse at center, rgba(112,0,255,0.04) 0%, transparent 70%);
+    text-align: center;
+  }
+  #reviews .section-header { text-align: center; }
+  #reviews .section-sub { margin: 0 auto; }
+
+  .stars-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+  .stars-num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--pink);
+    text-shadow: 0 0 30px rgba(255,0,127,0.5);
+  }
+  .stars-right { text-align: left; }
+  .stars-icons { color: #FFD700; font-size: 1.2rem; display: block; margin-bottom: 4px; }
+  .stars-count { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+
+  .reviews-carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 24px;
+    text-align: left;
+    position: relative;
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .review-card:hover {
+    border-color: rgba(255,0,127,0.2);
+    box-shadow: 0 0 20px rgba(255,0,127,0.05);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .review-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .review-name { font-weight: 600; font-size: 0.9rem; }
+  .review-platform { color: rgba(255,255,255,0.3); font-size: 0.7rem; }
+  .review-stars { color: #FFD700; font-size: 0.8rem; margin-bottom: 10px; }
+  .review-text { color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.7; }
+  .review-tag {
+    display: inline-block;
+    margin-top: 12px;
+    background: rgba(57,255,20,0.06);
+    border: 1px solid rgba(57,255,20,0.2);
+    color: var(--green);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    text-transform: uppercase;
+  }
+
+  /* LOCATION / FOOTER */
+  #location { padding: 100px 40px 0; }
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    align-items: center;
+  }
+  .location-info { }
+  .location-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .location-icon {
+    width: 40px; height: 40px;
+    border: 1px solid rgba(255,0,127,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    color: var(--pink);
+  }
+  .location-text strong { display: block; font-weight: 600; margin-bottom: 4px; }
+  .location-text span { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+
+  .map-container {
+    position: relative;
+    border: 1px solid rgba(255,0,127,0.2);
+    overflow: hidden;
+    height: 320px;
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: invert(90%) hue-rotate(180deg) brightness(0.85) saturate(1.2);
+  }
+  .map-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid rgba(255,0,127,0.2);
+    box-shadow: inset 0 0 30px rgba(255,0,127,0.05);
+  }
+
+  footer {
+    background: rgba(255,0,127,0.03);
+    border-top: 1px solid rgba(255,0,127,0.12);
+    padding: 40px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--pink); }
+  .footer-tagline { color: rgba(255,255,255,0.3); font-size: 0.8rem; margin-bottom: 24px; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--pink); }
+  .footer-copy { color: rgba(255,255,255,0.2); font-size: 0.75rem; }
+
+  /* FLOATING WHATSAPP */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    z-index: 999;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: none;
+    animation: wa-pulse 2.5s ease-in-out infinite;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  }
+  @keyframes wa-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.3); }
+    50% { box-shadow: 0 4px 20px rgba(37,211,102,0.6), 0 0 0 12px rgba(37,211,102,0); }
+  }
+
+  /* STICKY MOBILE FOOTER */
+  .mobile-sticky-footer {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 998;
+    background: rgba(5,5,5,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,0,127,0.2);
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .mobile-sticky-footer a {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-sticky-footer .maps-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+  }
+  .mobile-sticky-footer .wa-btn {
+    background: var(--pink);
+    color: var(--white);
+    box-shadow: 0 0 15px rgba(255,0,127,0.4);
+  }
+
+  /* VIBE TOGGLE */
+  .vibe-toggle {
+    position: fixed;
+    top: 80px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .vibe-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+  .toggle-switch {
+    width: 40px; height: 22px;
+    background: rgba(255,0,127,0.2);
+    border: 1px solid rgba(255,0,127,0.3);
+    border-radius: 11px;
+    cursor: none;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .toggle-switch.active { background: rgba(255,0,127,0.5); }
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 16px; height: 16px;
+    background: var(--pink);
+    border-radius: 50%;
+    transition: transform 0.3s;
+    box-shadow: 0 0 8px rgba(255,0,127,0.8);
+  }
+  .toggle-switch.active::after { transform: translateX(18px); }
+
+  /* NEON MODE (off = reduced motion) */
+  body:not(.neon-mode) .bento-card:hover,
+  body:not(.neon-mode) .pricing-card:hover {
+    animation: none;
+  }
+  body.neon-mode .section-title { text-shadow: 0 0 20px rgba(255,0,127,0.3); }
+  body.neon-mode .stat-num { text-shadow: 0 0 30px rgba(255,0,127,0.7); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    section { padding: 80px 20px; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-card.large, .bento-card.tall { grid-column: span 1; grid-row: span 1; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+    .reviews-carousel { grid-template-columns: 1fr; max-width: 400px; }
+    .location-grid { grid-template-columns: 1fr; }
+    .mobile-sticky-footer { display: flex; }
+    body { padding-bottom: 72px; }
+    .whatsapp-float { bottom: 90px; }
+    .vibe-toggle { display: none; }
+    .cursor, .cursor-trail { display: none; }
+    body { cursor: auto; }
+    .btn-primary, .btn-secondary, .fuel-item, .bento-card, .pricing-card, .review-card { cursor: pointer; }
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+    .hero-stats { gap: 24px; }
+    .stat-num { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body class="neon-mode">
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- Vibe Toggle -->
+<div class="vibe-toggle">
+  <span class="vibe-label">Neon</span>
+  <div class="toggle-switch active" id="vibeToggle" onclick="toggleVibe()"></div>
+  <span class="vibe-label">Mode</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">GALAXY<span>GAME</span>ZONE</div>
+  <ul class="nav-links">
+    <li><a href="#rigs">The Rigs</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Find Us</a></li>
+  </ul>
+  <a href="https://wa.me/91XXXXXXXXXX?text=Hi! I'd like to book a station at Galaxy Game Zone" class="btn-primary" target="_blank">BOOK NOW</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-scanlines"></div>
+  <div class="hero-content">
+    <div class="hero-badge">● NOW OPEN IN NANDED CITY, PUNE</div>
+    <h1>ENTER THE<br>GALAXY</h1>
+    <p class="hero-sub">Pune's Ultimate High-End Gaming Sanctuary</p>
+    <p class="hero-loc">Nanded City • Pune, Maharashtra</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/91XXXXXXXXXX?text=Hi! I'd like to book a station at Galaxy Game Zone" class="btn-primary breathing" target="_blank">⚡ WHATSAPP FOR AVAILABILITY</a>
+      <a href="#rigs" class="btn-secondary">EXPLORE THE RIGS</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5.0★</span><span class="stat-label">Google Rating</span></div>
+      <div class="stat"><span class="stat-num">88+</span><span class="stat-label">Reviews</span></div>
+      <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Elite Stations</span></div>
+      <div class="stat"><span class="stat-num">240Hz</span><span class="stat-label">Refresh Rate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">RTX 4070 Ti SUPER <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">240HZ REFRESH RATE <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">PS5 LOUNGE <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">PRO MECHANICAL KEYS <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">DXRacer ELITE CHAIRS <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">32GB DDR5 RAM <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">STREAMING BOOTH <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">AC ENVIRONMENT <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">HIGH-SPEED FIBER NET <span class="ticker-dot">◆</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item">RTX 4070 Ti SUPER <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">240HZ REFRESH RATE <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">PS5 LOUNGE <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">PRO MECHANICAL KEYS <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">DXRacer ELITE CHAIRS <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">32GB DDR5 RAM <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">STREAMING BOOTH <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">AC ENVIRONMENT <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">HIGH-SPEED FIBER NET <span class="ticker-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- RIGS SECTION -->
+<section id="rigs">
+  <div class="section-header reveal">
+    <span class="section-label">// Hardware Overview</span>
+    <h2 class="section-title">THE RIGS</h2>
+    <p class="section-sub">Every station engineered for peak performance. No lag. No excuses. Just pure competitive edge.</p>
+  </div>
+  <div class="bento-grid">
+    <div class="bento-card large reveal reveal-delay-1">
+      <div class="bento-img">🖥️</div>
+      <div class="bento-tag">⚡ ELITE</div>
+      <h3 class="bento-title">PC Gaming Elite</h3>
+      <p class="bento-desc">Our flagship battlestations. RTX 4070 Ti Super GPUs paired with 240Hz IPS monitors deliver buttery-smooth visuals that give you the competitive edge in any title.</p>
+      <div class="bento-specs">
+        <span class="spec-chip">RTX 4070 Ti Super</span>
+        <span class="spec-chip">Intel i9-13900K</span>
+        <span class="spec-chip">32GB DDR5</span>
+        <span class="spec-chip">240Hz Monitor</span>
+        <span class="spec-chip">NVMe SSD</span>
+      </div>
+    </div>
+    <div class="bento-card tall reveal reveal-delay-2">
+      <div class="bento-img" style="height:200px;">🎮</div>
+      <div class="bento-tag">🎮 CONSOLE</div>
+      <h3 class="bento-title">PS5 Lounge</h3>
+      <p class="bento-desc">Sony's finest. DualSense controllers. 4K HDR on 55" OLED panels. The console experience elevated.</p>
+      <div class="bento-specs">
+        <span class="spec-chip">PlayStation 5</span>
+        <span class="spec-chip">55" 4K OLED</span>
+        <span class="spec-chip">DualSense</span>
+      </div>
+    </div>
+    <div class="bento-card reveal reveal-delay-3">
+      <div class="bento-img">📡</div>
+      <div class="bento-tag">📡 STREAM</div>
+      <h3 class="bento-title">Streaming Booth</h3>
+      <p class="bento-desc">Go live in style. Private booth with pro-grade mic, ring light, and ultra-fast uplink.</p>
+      <div class="bento-specs">
+        <span class="spec-chip">4K Webcam</span>
+        <span class="spec-chip">Blue Yeti Mic</span>
+        <span class="spec-chip">OBS Ready</span>
+      </div>
+    </div>
+    <div class="bento-card reveal reveal-delay-4">
+      <div class="bento-img">🏆</div>
+      <div class="bento-tag">🏆 TOURNEY</div>
+      <h3 class="bento-title">Esports Arena</h3>
+      <p class="bento-desc">Dedicated tournament floor with private LAN pods. Host your squad for scrims or official competitions.</p>
+      <div class="bento-specs">
+        <span class="spec-chip">LAN Network</span>
+        <span class="spec-chip">10 Seats</span>
+        <span class="spec-chip">Headset Provided</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-header reveal">
+    <span class="section-label">// Access Tiers</span>
+    <h2 class="section-title">CHOOSE YOUR PASS</h2>
+    <p class="section-sub">All plans include full access to our premium hardware. Zero compromise on specs.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal reveal-delay-1">
+      <span class="pricing-tier">⚪ Silver</span>
+      <div class="pricing-price">₹40</div>
+      <span class="pricing-period">per hour</span>
+      <ul class="pricing-features">
+        <li>Standard Elite PC Station</li>
+        <li>240Hz Monitor</li>
+        <li>Mechanical Keyboard + Mouse</li>
+        <li>Free Headset</li>
+        <li>High-Speed WiFi</li>
+      </ul>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I'd like to book a Silver hour slot!" class="btn-secondary" style="display:block;text-align:center;" target="_blank">BOOK HOURLY</a>
+    </div>
+    <div class="pricing-card featured reveal reveal-delay-2">
+      <div class="pricing-badge">MOST POPULAR</div>
+      <span class="pricing-tier">🟡 Gold Pass</span>
+      <div class="pricing-price">₹150</div>
+      <span class="pricing-period">4-hour session</span>
+      <ul class="pricing-features">
+        <li>Priority Station Selection</li>
+        <li>RTX 4070 Ti Guaranteed</li>
+        <li>1 Snack + 1 Drink Included</li>
+        <li>Locker Storage</li>
+        <li>Save 15% vs Hourly</li>
+      </ul>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I'd like to book a Gold Pass session!" class="btn-primary breathing" style="display:block;text-align:center;" target="_blank">BOOK GOLD PASS</a>
+    </div>
+    <div class="pricing-card reveal reveal-delay-3">
+      <span class="pricing-tier">🌌 Galaxy Night</span>
+      <div class="pricing-price">₹299</div>
+      <span class="pricing-period">10PM – 6AM</span>
+      <ul class="pricing-features">
+        <li>Full Night — 8 Hours</li>
+        <li>Best RTX Rig Reserved</li>
+        <li>Unlimited Snacks Deal</li>
+        <li>Private Booth Option</li>
+        <li>Save 35% vs Hourly</li>
+      </ul>
+      <a href="https://wa.me/91XXXXXXXXXX?text=I'd like to book a Galaxy Night Out!" class="btn-secondary" style="display:block;text-align:center;" target="_blank">BOOK NIGHT OUT</a>
+    </div>
+  </div>
+</section>
+
+<!-- FUEL STATION -->
+<section id="fuel">
+  <span class="section-label reveal">// Fuel Station</span>
+  <h2 class="section-title reveal" style="margin-bottom:8px;">STAY POWERED</h2>
+  <p class="section-sub reveal" style="margin:0 auto 48px;">Gaming fuel, esports-style. Grab your energy and get back in the game.</p>
+  <div class="fuel-grid">
+    <div class="fuel-item reveal reveal-delay-1">
+      <span class="fuel-emoji">⚡</span>
+      <span class="fuel-name">Energy Drink</span>
+      <span class="fuel-price">₹60</span>
+    </div>
+    <div class="fuel-item reveal reveal-delay-1">
+      <span class="fuel-emoji">🧃</span>
+      <span class="fuel-name">Fresh Juice</span>
+      <span class="fuel-price">₹40</span>
+    </div>
+    <div class="fuel-item reveal reveal-delay-2">
+      <span class="fuel-emoji">☕</span>
+      <span class="fuel-name">Cold Coffee</span>
+      <span class="fuel-price">₹50</span>
+    </div>
+    <div class="fuel-item reveal reveal-delay-2">
+      <span class="fuel-emoji">🍟</span>
+      <span class="fuel-name">Fries</span>
+      <span class="fuel-price">₹60</span>
+    </div>
+    <div class="fuel-item reveal reveal-delay-3">
+      <span class="fuel-emoji">🍕</span>
+      <span class="fuel-name">Mini Pizza</span>
+      <span class="fuel-price">₹80</span>
+    </div>
+    <div class="fuel-item reveal reveal-delay-3">
+      <span class="fuel-emoji">🍫</span>
+      <span class="fuel-name">Snack Combo</span>
+      <span class="fuel-price">₹45</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-header reveal">
+    <span class="section-label">// Wall of Fame</span>
+    <h2 class="section-title">THE COMMUNITY SPEAKS</h2>
+    <p class="section-sub">Real players. Real experiences. Over 88 five-star reviews on Google.</p>
+  </div>
+  <div class="stars-display reveal">
+    <div class="stars-num">5.0</div>
+    <div class="stars-right">
+      <span class="stars-icons">★★★★★</span>
+      <span class="stars-count">88+ Reviews on Google</span>
+    </div>
+  </div>
+  <div class="reviews-carousel">
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-header">
+        <div class="review-avatar">AK</div>
+        <div><div class="review-name">Aryan K.</div><div class="review-platform">Google Review</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">The RTX 4070 Ti rigs are absolutely insane! Played Valorant at 240fps and the experience is completely different. Clean AC environment and the staff are super helpful.</p>
+      <span class="review-tag">✓ Verified Visit</span>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-header">
+        <div class="review-avatar" style="background:linear-gradient(135deg,#7000FF,#FF007F)">PS</div>
+        <div><div class="review-name">Priya S.</div><div class="review-platform">Google Review</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Came with my squad for a night out session — best decision ever! The vibe is like a gaming nightclub. Snack prices are totally reasonable and the chairs are so comfy.</p>
+      <span class="review-tag">✓ Night Out Pass</span>
+    </div>
+    <div class="review-card reveal reveal-delay-3">
+      <div class="review-header">
+        <div class="review-avatar" style="background:linear-gradient(135deg,#39FF14,#7000FF)">RV</div>
+        <div><div class="review-name">Rahul V.</div><div class="review-platform">Google Review</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Best gaming zone in Pune no cap. The PS5 lounge with the OLED TV is chef's kiss. Finally a cafe that takes gaming seriously. Will keep coming back!</p>
+      <span class="review-tag">✓ Regular Member</span>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-header">
+        <div class="review-avatar" style="background:linear-gradient(135deg,#FF007F,#39FF14)">SM</div>
+        <div><div class="review-name">Sneha M.</div><div class="review-platform">Google Review</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Great value for money! The Gold Pass deal is unbeatable. Got snacks included and the RTX rig was blazing fast. Definitely the premium choice in Nanded City.</p>
+      <span class="review-tag">✓ Gold Pass</span>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-header">
+        <div class="review-avatar" style="background:linear-gradient(135deg,#7000FF,#39FF14)">KJ</div>
+        <div><div class="review-name">Kabir J.</div><div class="review-platform">Google Review</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Held our college team's BGMI scrims here. LAN setup was flawless, zero lag. The staff set up everything perfectly. This is what a real esports venue should look like.</p>
+      <span class="review-tag">✓ Esports Event</span>
+    </div>
+    <div class="review-card reveal reveal-delay-3">
+      <div class="review-header">
+        <div class="review-avatar" style="background:linear-gradient(135deg,#FF007F,#7000FF)">AD</div>
+        <div><div class="review-name">Ananya D.</div><div class="review-platform">Google Review</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Super clean, neon aesthetic, great PC specs. Love that they have a streaming booth too — used it to record content and the setup was professional-grade. Highly recommend!</p>
+      <span class="review-tag">✓ Content Creator</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="section-header reveal">
+    <span class="section-label">// Navigate</span>
+    <h2 class="section-title">FIND THE GALAXY</h2>
+  </div>
+  <div class="location-grid">
+    <div class="location-info">
+      <div class="location-detail reveal reveal-delay-1">
+        <div class="location-icon">📍</div>
+        <div class="location-text">
+          <strong>Address</strong>
+          <span>Nanded City, Sinhagad Road,<br>Pune, Maharashtra 411041</span>
+        </div>
+      </div>
+      <div class="location-detail reveal reveal-delay-2">
+        <div class="location-icon">🕐</div>
+        <div class="location-text">
+          <strong>Hours</strong>
+          <span>Mon–Sun: 10:00 AM – 2:00 AM<br>Night Out: 10:00 PM – 6:00 AM</span>
+        </div>
+      </div>
+      <div class="location-detail reveal reveal-delay-3">
+        <div class="location-icon">📱</div>
+        <div class="location-text">
+          <strong>WhatsApp / Call</strong>
+          <span>+91 XXXXX XXXXX<br>Instant booking via WhatsApp</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;" class="reveal reveal-delay-4">
+        <a href="https://maps.google.com/?q=Nanded+City+Pune" class="btn-primary" target="_blank">🗺️ GET DIRECTIONS</a>
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi! I want to book a session at Galaxy Game Zone" class="btn-secondary" target="_blank">💬 WHATSAPP US</a>
+      </div>
+    </div>
+    <div class="map-container reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.5!2d73.8272!3d18.4636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzQ4LjkiTiA3M8KwNDknMzguMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+      <div class="map-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GALAXY<span>GAME</span>ZONE</div>
+  <p class="footer-tagline">Pune's Ultimate High-End Gaming Sanctuary — Nanded City</p>
+  <div class="footer-links">
+    <a href="#rigs">The Rigs</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#location">Location</a>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+  </div>
+  <p class="footer-copy">© 2025 Galaxy Game Zone Pune. All rights reserved. Nanded City, Pune, Maharashtra.</p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi! I'd like to book a station at Galaxy Game Zone" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- Mobile Sticky Footer -->
+<div class="mobile-sticky-footer">
+  <a href="https://maps.google.com/?q=Nanded+City+Pune+Galaxy+Game+Zone" class="maps-btn" target="_blank">🗺️ Navigate</a>
+  <a href="https://wa.me/91XXXXXXXXXX?text=Hi! I'd like to book a session at Galaxy Game Zone" class="wa-btn" target="_blank">💬 WhatsApp</a>
+</div>
+
+<script>
+  // Custom Cursor
+  const cursor = document.getElementById('cursor');
+  const trail = document.getElementById('cursorTrail');
+  let trailX = 0, trailY = 0;
+
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX - 6 + 'px';
+    cursor.style.top = e.clientY - 6 + 'px';
+    setTimeout(() => {
+      trail.style.left = e.clientX - 14 + 'px';
+      trail.style.top = e.clientY - 14 + 'px';
+    }, 60);
+  });
+
+  document.querySelectorAll('a, button, .fuel-item, .bento-card, .pricing-card, .review-card, .toggle-switch').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2)';
+      trail.style.transform = 'scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      trail.style.transform = 'scale(1)';
+    });
+  });
+
+  // Vibe Toggle
+  function toggleVibe() {
+    const toggle = document.getElementById('vibeToggle');
+    document.body.classList.toggle('neon-mode');
+    toggle.classList.toggle('active');
+  }
+
+  // Scroll Reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Subtle hover sound (keyboard click) - muted by default
+  let audioCtx = null;
+  let soundEnabled = false;
+
+  function playClick() {
+    if (!soundEnabled) return;
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.05);
+    gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.06);
+    osc.start(audioCtx.currentTime);
+    osc.stop(audioCtx.currentTime + 0.06);
+  }
+
+  document.querySelectorAll('.nav-links a, .btn-primary, .btn-secondary').forEach(el => {
+    el.addEventListener('mouseenter', playClick);
+  });
+</script>
+
+</body>
+</html>
